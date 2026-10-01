@@ -1,0 +1,21 @@
+{
+  "name": "jwt-secret-generator",
+  "version": "1.0.0",
+  "description": "Gerador seguro de JWT Secrets usando CSPRNG nativo do Node.js.",
+  "main": "main.js",
+  "scripts": {
+    "fast": "node main.js  --interactive",
+    "start": "node main.js",
+    "help": "node main.js --help"
+  },
+  "keywords": [
+    "jwt",
+    "jwt-secret",
+    "security",
+    "cryptography",
+    "csprng",
+    "nodejs"
+  ],
+  "author": "Kauã Vasconcelos",
+  "license": "SEE LICENSE IN LICENSE"
+}
