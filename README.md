@@ -2,11 +2,11 @@
 
 <div align="center">
 
-<p><strong>Gerador de JWT Secrets criptograficamente seguros para aplicações Node.js.</strong></p>
+<p><strong>Cryptographically secure JWT Secret generator for Node.js applications.</strong></p>
 
 <p>
-  Gere secrets de <strong>256 ou 512 bits</strong> utilizando o CSPRNG nativo do Node.js,
-  com suporte a <strong>Base64URL</strong>, <strong>Hex</strong>, modo interativo e salvamento local.
+  Generate <strong>256 ou 512 bits</strong> using Node.js native CSPRNG,
+  with support for <strong>Base64URL</strong>, <strong>Hex</strong>, interactive mode and local saving.
 </p>
 
 <br />
@@ -18,29 +18,29 @@
 
 <br /><br />
 
-<a href="#visão-geral">Visão geral</a> · <a href="#recursos">Recursos</a> · <a href="#instalação">Instalação</a> · <a href="#uso">Uso</a> · <a href="#modo-interativo">Modo interativo</a> · <a href="#segurança">Segurança</a>
+<a href="#visão-geral">Overview</a> · <a href="#recursos">Features</a> · <a href="#instalação">Installation</a> · <a href="#uso">Usage</a> · <a href="#modo-interativo">Interactive mode</a> · <a href="#segurança">Security</a>
 
 </div>
 
 ---
 
-## Visão geral
+## Overview
 
-O **JWT Secret Generator** é uma ferramenta de linha de comando desenvolvida para gerar secrets de alta entropia destinados a aplicações que utilizam **JSON Web Tokens (JWT)**.
+**JWT Secret Generator** is a command-line tool designed to generate high-entropy secrets for applications that use **JSON Web Tokens (JWT)**.
 
-A geração utiliza a API criptográfica nativa do Node.js:
+Generation uses Node.js native cryptographic API:
 
 ```js
 crypto.randomBytes()
 ```
 
-O método utiliza um **CSPRNG (Cryptographically Secure Pseudo-Random Number Generator)**, apropriado para geração de dados aleatórios destinados a aplicações criptográficas.
+The method uses a **CSPRNG (Cryptographically Secure Pseudo-Random Number Generator)**, suitable for generating random data for cryptographic applications.
 
-A ferramenta foi projetada para funcionar **localmente**, sem necessidade de enviar o secret gerado para uma API ou serviço externo.
+The tool is designed to run **locally**, without sending the generated secret to an external API or service.
 
 ---
 
-## Recursos
+## Features
 
 * Geração criptograficamente segura usando `crypto.randomBytes()`.
 * Suporte a **256 bits (32 bytes)**.
@@ -48,7 +48,7 @@ A ferramenta foi projetada para funcionar **localmente**, sem necessidade de env
 * Formato **Base64URL**.
 * Formato **Hexadecimal**.
 * Modo de execução por argumentos.
-* Modo interativo para geração guiada.
+* Interactive mode para geração guiada.
 * Comando `--help`.
 * Aliases curtos para os principais argumentos.
 * Identificação opcional da secret através de uma label.
@@ -59,19 +59,19 @@ A ferramenta foi projetada para funcionar **localmente**, sem necessidade de env
 
 ---
 
-## Requisitos
+## Requirements
 
-* **Node.js 18 ou superior**
-* Terminal compatível com Node.js
-* npm é opcional e só é necessário caso o projeto utilize dependências adicionais.
+* **Node.js 18 or later**
+* Terminal compatible with Node.js
+* npm is optional and only required if the project uses additional dependencies.
 
-Verifique sua versão:
+Check your version:
 
 ```bash
 node --version
 ```
 
-Exemplo:
+Example:
 
 ```text
 v20.x.x
@@ -79,60 +79,60 @@ v20.x.x
 
 ---
 
-## Instalação
+## Installation
 
-Clone o repositório:
+Clone the repository:
 
 ```bash
 git clone https://github.com/SEU_USUARIO/jwt-secret-generator.git
 ```
 
-Entre no diretório:
+Enter the directory:
 
 ```bash
 cd jwt-secret-generator
 ```
 
-Não é necessário instalar dependências para executar a versão atual, caso o projeto contenha apenas o código nativo apresentado.
+No dependencies need to be installed to run the current version if the project contains only the native code shown.
 
 ---
 
-## Uso rápido
+## Quick start
 
-Execute:
+Run:
 
 ```bash
 node main.js
 ```
 
-Quando nenhum argumento é fornecido em um terminal interativo, a ferramenta inicia automaticamente o **modo interativo**.
+When no arguments are provided in an interactive terminal, the tool automatically starts **interactive mode**.
 
-Para gerar diretamente uma secret:
+To generate a secret directly:
 
 ```bash
 node main.js --bits 512 --format base64url
 ```
 
-Saída:
+Output:
 
 ```text
 your-generated-secret
 ```
 
-No modo não interativo, a saída contém apenas a secret, facilitando seu uso em scripts e automações.
+In non-interactive mode, the output contains only the secret, making it convenient for scripts and automation.
 
 ---
 
-## Argumentos
+## Arguments
 
-| Argumento       | Alias | Valores            | Padrão      | Descrição                        |
+| Argumento       | Alias | Values            | Default      | Description                        |
 | --------------- | ----- | ------------------ | ----------- | -------------------------------- |
-| `--bits`        | `-b`  | `256`, `512`       | `512`       | Define a quantidade de entropia. |
-| `--format`      | `-f`  | `base64url`, `hex` | `base64url` | Define o formato da secret.      |
-| `--interactive` | `-i`  | —                  | —           | Ativa o modo interativo.         |
-| `--help`        | `-h`  | —                  | —           | Exibe a ajuda da ferramenta.     |
+| `--bits`        | `-b`  | `256`, `512`       | `512`       | Defines the amount of entropy. |
+| `--format`      | `-f`  | `base64url`, `hex` | `base64url` | Defines the secret format.      |
+| `--interactive` | `-i`  | —                  | —           | Enables interactive mode.         |
+| `--help`        | `-h`  | —                  | —           | Displays the tool help.     |
 
-### Ver ajuda
+### View help
 
 ```bash
 node main.js --help
@@ -146,7 +146,7 @@ node main.js -h
 
 ---
 
-## Geração por linha de comando
+## Command-line generation
 
 ### 256 bits — Base64URL
 
@@ -172,7 +172,7 @@ node main.js --bits 256 --format hex
 node main.js --bits 512 --format hex
 ```
 
-Também é possível utilizar os aliases:
+You can also use the aliases:
 
 ```bash
 node main.js -b 512 -f base64url
@@ -180,24 +180,24 @@ node main.js -b 512 -f base64url
 
 ---
 
-## Formatos disponíveis
+## Available formats
 
 ### Base64URL
 
-O formato `base64url` utiliza uma representação compatível com o padrão Base64URL.
+The `base64url` format uses a representation compatible with the Base64URL standard.
 
-Exemplo:
+Example:
 
 ```text
 mV7k...example...xQ
 ```
 
-É particularmente conveniente para utilização em:
+It is particularly convenient for use in:
 
-* variáveis de ambiente;
-* configurações de aplicações;
-* headers HTTP;
-* sistemas que trabalham com URLs.
+* environment variables;
+* application configuration;
+* HTTP headers;
+* systems that work with URLs.
 
 O Node.js utiliza a codificação:
 
@@ -209,15 +209,15 @@ buffer.toString('base64url')
 
 ### Hexadecimal
 
-O formato `hex` representa cada byte como dois caracteres hexadecimais.
+The `hex` format represents each byte as two hexadecimal characters.
 
-Exemplo:
+Example:
 
 ```text
 a93f...example...71c2
 ```
 
-É uma representação simples e amplamente utilizada para secrets e chaves.
+It is a simple representation widely used for secrets and keys.
 
 O Node.js utiliza:
 
@@ -227,87 +227,87 @@ buffer.toString('hex')
 
 ---
 
-## Modo interativo
+## Interactive mode
 
-O modo interativo pode ser iniciado explicitamente com:
+Interactive mode can be started explicitly with:
 
 ```bash
 node main.js --interactive
 ```
 
-Ou:
+Or:
 
 ```bash
 node main.js -i
 ```
 
-Quando iniciado, o programa solicita:
+When started, the program asks for:
 
-1. Nome/label da secret.
-2. Quantidade de entropia.
-3. Formato da saída.
-4. Se a secret deve ser salva em arquivo.
-5. Caminho do arquivo, caso o salvamento seja escolhido.
+1. Secret name/label.
+2. Amount of entropy.
+3. Output format.
+4. Whether the secret should be saved to a file.
+5. File path, if saving is selected.
 
-Exemplo:
+Example:
 
 ```text
 [ Gerador JWT ] JWT Secret Generator
 ──────────────────────────────────────────────────────────
-> Modo interativo ativado — responda às perguntas abaixo.
+> Interactive mode ativado — responda às perguntas abaixo.
 
 > Nome/label da secret (opcional):
-> Entropia em bits (256/512): [padrão: 512]
+> Entropy em bits (256/512): [padrão: 512]
 > Formato da saída (base64url/hex): [padrão: base64url]
 > Salvar secret em arquivo [s/n, padrão n]:
 ```
 
 ---
 
-## Salvamento em arquivo
+## Saving to a file
 
-O modo interativo permite salvar a secret em um arquivo local.
+Interactive mode allows the secret to be saved to a local file.
 
-Exemplo:
+Example:
 
 ```text
-> Caminho do arquivo: [default: jwt-secret-api-1720000000000.txt]
+> File path: [default: jwt-secret-api-1720000000000.txt]
 ```
 
-Quando possível, a ferramenta tenta aplicar permissões:
+When possible, the tool attempts to apply permissions:
 
 ```text
 0600
 ```
 
-Isso significa que o arquivo deve ser acessível somente pelo proprietário em sistemas que suportam esse modelo de permissões.
+This means the file should be accessible only by the owner on systems that support this permission model.
 
-> **Importante:** permissões de arquivo podem funcionar de maneira diferente dependendo do sistema operacional. No Windows, por exemplo, o comportamento de `chmod` não é equivalente ao de sistemas Unix/Linux.
+> **Important:** file permissions may behave differently depending on the operating system. On Windows, for example, `chmod` behavior is not equivalent to Unix/Linux systems.
 
 ---
 
-## Como a secret é gerada
+## How the secret is generated
 
-O tamanho da secret é calculado a partir da quantidade de bits:
+The secret size is calculated from the number of bits:
 
 ```js
 const lengthBytes = bits / 8;
 ```
 
-Portanto:
+Therefore:
 
-| Entropia | Bytes gerados |
+| Entropy | Generated bytes |
 | -------: | ------------: |
 | 256 bits |      32 bytes |
 | 512 bits |      64 bytes |
 
-A geração é realizada através de:
+Generation is performed using:
 
 ```js
 const buffer = crypto.randomBytes(lengthBytes);
 ```
 
-A ferramenta então converte os bytes para o formato solicitado:
+The tool then converts the bytes to the requested format:
 
 ```js
 buffer.toString('base64url')
@@ -321,17 +321,17 @@ buffer.toString('hex')
 
 ---
 
-## Por que `crypto.randomBytes()`?
+## Why `crypto.randomBytes()`?
 
-Secrets utilizados para autenticação precisam ser imprevisíveis.
+Secrets used for authentication must be unpredictable.
 
-Por isso, a ferramenta **não utiliza**:
+Therefore, the tool **does not use**:
 
 ```js
 Math.random()
 ```
 
-`Math.random()` é destinado a geração pseudoaleatória comum e não deve ser utilizado para gerar credenciais, tokens ou secrets criptográficos.
+`Math.random()` is intended for general pseudo-random generation and should not be used to generate credentials, tokens, or cryptographic secrets.
 
 O projeto utiliza:
 
@@ -339,11 +339,11 @@ O projeto utiliza:
 crypto.randomBytes()
 ```
 
-A API criptográfica do Node.js utiliza mecanismos apropriados do ambiente para fornecer bytes aleatórios destinados a aplicações criptográficas.
+Node.js cryptographic APIs use appropriate environment mechanisms to provide random bytes for cryptographic applications.
 
 ---
 
-## Entropia
+## Entropy
 
 ### 256 bits
 
@@ -351,7 +351,7 @@ A API criptográfica do Node.js utiliza mecanismos apropriados do ambiente para 
 256 bits = 32 bytes
 ```
 
-Fornece um espaço de valores extremamente grande para uma secret aleatória.
+Provides an extremely large value space for a random secret.
 
 ### 512 bits
 
@@ -359,54 +359,54 @@ Fornece um espaço de valores extremamente grande para uma secret aleatória.
 512 bits = 64 bytes
 ```
 
-Oferece o dobro da quantidade de bits em relação à configuração de 256 bits.
+Provides twice the number of bits compared with the 256-bit configuration.
 
-A ferramenta utiliza **512 bits como padrão**.
+The tool uses **512 bits by default**.
 
-> Aumentar a quantidade de bits não substitui boas práticas de armazenamento, controle de acesso e gerenciamento de secrets.
+> Increasing the number of bits does not replace good storage, access control, and secret management practices.
 
 ---
 
-## Segurança
+## Security
 
-### Nunca faça commit de uma secret real
+### Never commit a real secret
 
-Não faça:
+Do not do this:
 
 ```js
 const JWT_SECRET = "uma-secret-real";
 ```
 
-Prefira:
+Prefer:
 
 ```env
 JWT_SECRET=sua_secret_aqui
 ```
 
-E carregue através do ambiente:
+Load it through the environment:
 
 ```js
 const jwtSecret = process.env.JWT_SECRET;
 ```
 
-### Recomendações
+### Recommendations
 
-* Gere secrets diferentes para ambientes diferentes.
-* Não reutilize secrets desnecessariamente.
-* Não publique secrets no GitHub.
-* Não envie secrets por mensagens.
-* Não coloque `.env` no repositório.
-* Utilize um Secret Manager em ambientes de produção quando apropriado.
-* Faça rotação de secrets caso exista suspeita de exposição.
-* Restrinja o acesso aos arquivos que armazenam secrets.
-* Não coloque secrets em logs.
-* Não compartilhe secrets gerados para demonstrações como se fossem credenciais reais.
+* Generate different secrets for different environments.
+* Do not unnecessarily reuse secrets.
+* Do not publish secrets on GitHub.
+* Do not send secrets through messages.
+* Do not put `.env` in the repository.
+* Use a Secret Manager in production environments when appropriate.
+* Rotate secrets if exposure is suspected.
+* Restrict access to files that store secrets.
+* Do not put secrets in logs.
+* Do not share secrets generated for demonstrations as if they were real credentials.
 
 ---
 
 ## `.gitignore`
 
-Recomenda-se adicionar arquivos de ambiente ao `.gitignore`:
+It is recommended to add environment files to `.gitignore`:
 
 ```gitignore
 .env
@@ -416,23 +416,23 @@ Recomenda-se adicionar arquivos de ambiente ao `.gitignore`:
 
 ---
 
-## Exemplo de `.env.example`
+## `.env.example` example
 
-O repositório pode conter um arquivo `.env.example` sem nenhuma credencial real:
+The repository may contain an `.env.example` file without any real credentials:
 
 ```env
 JWT_SECRET=
 ```
 
-O valor deve ser preenchido somente no ambiente local ou no sistema de gerenciamento de secrets utilizado pela aplicação.
+The value should only be populated in the local environment or in the secret management system used by the application.
 
 ---
 
-## Utilização com JWT
+## Using JWT
 
-Uma secret gerada pode ser utilizada em uma aplicação JWT com algoritmos HMAC, desde que a configuração da aplicação seja adequada.
+A generated secret can be used in a JWT application with HMAC algorithms, provided the application is configured appropriately.
 
-Exemplo:
+Example:
 
 ```js
 import jwt from "jsonwebtoken";
@@ -449,57 +449,57 @@ const token = jwt.sign(
 );
 ```
 
-O secret pode ser utilizado com algoritmos como:
+The secret can be used with algorithms such as:
 
 * `HS256`
 * `HS384`
 * `HS512`
 
-A escolha do algoritmo deve ser consistente entre a emissão e a validação dos tokens.
+The algorithm choice must be consistent between token issuance and validation.
 
 ---
 
-## Privacidade
+## Privacy
 
-A geração das secrets ocorre localmente.
+Secret generation occurs locally.
 
-O funcionamento básico da ferramenta não exige:
+The basic operation of the tool does not require:
 
-* API externa;
-* banco de dados;
-* conta de usuário;
-* conexão com um servidor;
-* envio da secret para terceiros.
+* an external API;
+* a database;
+* a user account;
+* a server connection;
+* sending the secret to third parties.
 
-Isso significa que uma secret gerada localmente pode permanecer exclusivamente no ambiente em que o programa foi executado.
+This means a locally generated secret can remain exclusively in the environment where the program was executed.
 
-> Se você utilizar uma versão hospedada por terceiros, não presuma que o funcionamento seja idêntico ao código deste repositório. Verifique a implementação antes de inserir informações sensíveis.
+> If you use a version hosted by a third party, do not assume its behavior is identical to the code in this repository. Verify the implementation before entering sensitive information.
 
 ---
 
-## Limitações
+## Limitations
 
-O JWT Secret Generator é responsável apenas pela **geração de secrets**.
+JWT Secret Generator is responsible only for **secret generation**.
 
-Ele não fornece automaticamente:
+It does not automatically provide:
 
-* armazenamento seguro;
-* gerenciamento de usuários;
-* autenticação;
-* autorização;
-* revogação de JWTs;
-* gerenciamento de sessões;
-* rotação automática;
+* secure storage;
+* user management;
+* authentication;
+* authorization;
+* JWT revocation;
+* session management;
+* automatic rotation;
 * Secret Manager;
-* gerenciamento de certificados;
-* geração de chaves assimétricas;
-* proteção da aplicação que utiliza o secret.
+* certificate management;
+* asymmetric key generation;
+* protection for the application that uses the secret.
 
-A segurança final depende também da aplicação que utiliza a secret e de como ela é armazenada.
+Overall security also depends on the application using the secret and how it is stored.
 
 ---
 
-## Desenvolvimento
+## Development
 
 Clone o projeto:
 
@@ -508,37 +508,37 @@ git clone https://github.com/SEU_USUARIO/jwt-secret-generator.git
 cd jwt-secret-generator
 ```
 
-Execute:
+Run:
 
 ```bash
 node main.js
 ```
 
-Teste a geração direta:
+Test direct generation:
 
 ```bash
 node main.js --bits 512 --format base64url
 ```
 
-Teste o modo interativo:
+Test interactive mode:
 
 ```bash
 node main.js --interactive
 ```
 
-Teste a ajuda:
+Test the help:
 
 ```bash
 node main.js --help
 ```
 
-Antes de criar um commit, verifique se nenhuma credencial real foi adicionada:
+Before creating a commit, verify that no real credentials were added:
 
 ```bash
 git status
 ```
 
-E revise as alterações:
+Review the changes:
 
 ```bash
 git diff
@@ -546,9 +546,9 @@ git diff
 
 ---
 
-## Estrutura
+## Structure
 
-Uma estrutura simples para o projeto:
+A simple project structure:
 
 ```text
 jwt-secret-generator/
@@ -561,61 +561,61 @@ jwt-secret-generator/
 
 ---
 
-## Licença
+## License
 
-Este projeto utiliza uma **licença personalizada**.
+This project uses a **custom license**.
 
-É permitido:
+Allowed:
 
-* estudar o código;
-* utilizar a ferramenta;
-* modificar o código;
-* criar versões derivadas;
-* distribuir modificações gratuitamente;
-* realizar melhorias no projeto.
+* study the code;
+* use the tool;
+* modify the code;
+* create derivative versions;
+* distribute modifications free of charge;
+* make improvements to the project.
 
-Não é permitido:
+Not allowed:
 
-* vender o projeto;
-* vender versões modificadas;
-* comercializar o código como produto independente;
-* remover a atribuição ao autor original;
-* apresentar o projeto original como sendo de autoria de outra pessoa.
+* sell the project;
+* sell modified versions;
+* commercialize the code as an independent product;
+* remove attribution to the original author;
+* present the original project as being authored by someone else.
 
-Consulte o arquivo [`LICENSE`](LICENSE) para conhecer os termos completos.
-
----
-
-## Contribuição
-
-Alterações e melhorias podem ser propostas através de Pull Requests.
-
-Ao contribuir, certifique-se de:
-
-1. Não adicionar secrets ou credenciais reais.
-2. Não adicionar dados pessoais desnecessários.
-3. Manter o funcionamento existente da CLI.
-4. Documentar novos argumentos ou comportamentos.
-5. Testar as alterações antes de abrir o Pull Request.
+See the [`LICENSE`](LICENSE) file for the complete terms.
 
 ---
 
-## Aviso
+## Contributing
 
-Esta ferramenta gera valores aleatórios criptograficamente seguros, mas isso **não garante que uma aplicação inteira seja segura**.
+Changes and improvements can be proposed through Pull Requests.
 
-A segurança de um sistema JWT também depende de fatores como:
+When contributing, make sure to:
 
-* armazenamento do secret;
-* algoritmo utilizado;
-* validação do token;
-* expiração;
-* proteção das credenciais;
-* controle de acesso;
-* configuração do servidor;
-* tratamento de comprometimento de secrets.
+1. Do not add real secrets or credentials.
+2. Do not add unnecessary personal data.
+3. Maintain the existing CLI behavior.
+4. Document new arguments or behaviors.
+5. Test changes before opening the Pull Request.
 
-Use a ferramenta como parte de uma estratégia de segurança adequada.
+---
+
+## Disclaimer
+
+This tool generates cryptographically secure random values, but this **does not guarantee that an entire application is secure**.
+
+The security of a JWT system also depends on factors such as:
+
+* secret storage;
+* algorithm used;
+* token validation;
+* expiration;
+* credential protection;
+* access control;
+* server configuration;
+* handling compromised secrets.
+
+Use the tool as part of an appropriate security strategy.
 
 ---
 
@@ -623,8 +623,8 @@ Use a ferramenta como parte de uma estratégia de segurança adequada.
 
 ### JWT Secret Generator
 
-**Geração local de secrets criptograficamente seguros.**
+**Local generation of cryptographically secure secrets.**
 
-Feito para desenvolvimento e aplicações que precisam de secrets de alta entropia.
+Built for development and applications that require high-entropy secrets.
 
 </div>
