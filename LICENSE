@@ -1,21 +1,43 @@
-MIT License
-
+Ocean JWT Secret Generator License
 Copyright (c) 2026 Suesa
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+1. Permissão
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+É concedida permissão para qualquer pessoa obter, usar, estudar,
+copiar, modificar e distribuir este software gratuitamente.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+2. Modificação
+
+É permitido modificar o código-fonte e criar versões derivadas,
+desde que os avisos de copyright e a atribuição ao autor original
+sejam mantidos.
+
+3. Proibição de venda
+
+É proibido vender, comercializar, sublicenciar ou cobrar pelo
+software original ou por versões modificadas derivadas deste projeto.
+
+4. Atribuição
+
+É proibido apresentar o projeto original ou qualquer versão derivada
+como sendo originalmente criado por outra pessoa.
+
+Os avisos de copyright e a referência ao autor original devem ser
+mantidos em todas as cópias e versões modificadas.
+
+5. Distribuição
+
+Versões modificadas podem ser distribuídas gratuitamente, desde que
+esta licença seja incluída e as alterações sejam identificadas de
+forma clara.
+
+6. Sem garantia
+
+O software é fornecido "como está", sem garantias de qualquer tipo,
+expressas ou implícitas. O autor não será responsável por danos,
+perdas ou problemas decorrentes do uso do software.
+
+7. Alterações na licença
+
+Esta licença aplica-se à versão do software na qual está incluída.
+Alterações futuras poderão utilizar termos de licença diferentes.
